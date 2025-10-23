@@ -1,0 +1,27 @@
+# PHP dependencies
+/vendor/
+
+# Composer artifacts
+/composer.phar
+/composer-cache/
+
+# PHPUnit cache
+/.phpunit.result.cache
+/phpunit.xml.cache
+
+# Build and tooling output
+/coverage/
+/build/
+/.php-cs-fixer.cache
+
+# Environment files
+/.env
+/.env.local
+
+# IDE and OS
+.DS_Store
+/.idea/
+/.vscode/
+
+# Planing files
+/Tasks.md
