@@ -6,7 +6,6 @@
     displayDetailsOnTestsThatTriggerNotices="true"
     beStrictAboutOutputDuringTests="true"
     beStrictAboutTestsThatDoNotTestAnything="true"
-    verbose="true"
 >
     <testsuites>
         <testsuite name="Unit">

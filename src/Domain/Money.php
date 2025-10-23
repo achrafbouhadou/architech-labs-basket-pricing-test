@@ -7,6 +7,7 @@ namespace ArchitechLabs\Basket\Domain;
 use ArchitechLabs\Basket\Domain\Exception\CurrencyMismatch;
 use InvalidArgumentException;
 use function abs;
+use function sprintf;
 
 /**
  * Simple value object that keeps money in integer cents to avoid floating point bugs.
@@ -146,6 +147,19 @@ final class Money
     public function isPositive(): bool
     {
         return $this->amount > 0;
+    }
+
+    /**
+     * Format the amount as a human friendly string with currency code.
+     */
+    public function format(): string
+    {
+        $absolute = abs($this->amount);
+        $units = intdiv($absolute, 100);
+        $cents = $absolute % 100;
+        $sign = $this->amount < 0 ? '-' : '';
+
+        return sprintf('%s %s%d.%02d', $this->currency, $sign, $units, $cents);
     }
 
     /**

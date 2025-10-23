@@ -74,6 +74,17 @@ final class Basket
      */
     public function total(): array
     {
+        if ($this->lineItems === []) {
+            $zero = Money::zero($this->currency);
+
+            return [
+                'subtotal' => $zero,
+                'discount' => $zero,
+                'delivery' => $zero,
+                'total' => $zero,
+            ];
+        }
+
         $lineItems = new LineItems($this->lineItems, $this->currency);
 
         $subtotal = $lineItems->subtotal();
