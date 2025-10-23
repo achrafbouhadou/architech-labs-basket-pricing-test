@@ -101,7 +101,3 @@ Extending the system:
 - Tests: PHPUnit 10 (`phpunit.xml`).
 - Docker: `docker/Dockerfile` + `docker/docker-compose.yml`.
 
-## Next Steps
-
-- Publish to a public repository with Conventional Commits.
-- Consider richer money formatting (locale-aware) if a UI is added.
