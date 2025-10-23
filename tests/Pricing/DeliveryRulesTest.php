@@ -26,6 +26,9 @@ final class DeliveryRulesTest extends TestCase
         self::assertSame($expectedFee, $rules->feeFor($subtotal)->amount());
     }
 
+    /**
+     * @return array<string, array{0: int, 1: int}>
+     */
     public static function feeExamples(): array
     {
         return [

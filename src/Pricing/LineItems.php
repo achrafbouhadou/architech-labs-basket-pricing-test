@@ -14,6 +14,8 @@ use function trim;
 
 /**
  * Read-only collection to help offers inspect the current basket content.
+ *
+ * @implements IteratorAggregate<int, LineItem>
  */
 final class LineItems implements IteratorAggregate
 {

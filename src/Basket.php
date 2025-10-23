@@ -16,6 +16,7 @@ use function strtoupper;
 /**
  * Basket ties the catalog, offers, and delivery rules together.
  */
+/** @psalm-type MoneyBreakdown = array{subtotal: Money, discount: Money, delivery: Money, total: Money} */
 final class Basket
 {
     private Catalog $catalog;
@@ -70,7 +71,7 @@ final class Basket
     /**
      * Calculate the money breakdown for the basket.
      *
-     * @return array{subtotal: Money, discount: Money, delivery: Money, total: Money}
+     * @return MoneyBreakdown
      */
     public function total(): array
     {

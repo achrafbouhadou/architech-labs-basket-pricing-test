@@ -29,6 +29,10 @@ final class BasketTest extends TestCase
         self::assertSame(0, $totals['delivery']->amount());
     }
 
+    /**
+     * @param list<string> $items
+     * @param array{subtotal: int, discount: int, delivery: int, total: int} $expected
+     */
     #[DataProvider('basketExamples')]
     public function testBasketTotalsMatchExpected(array $items, array $expected): void
     {
@@ -46,6 +50,9 @@ final class BasketTest extends TestCase
         self::assertSame($expected['total'], $totals['total']->amount(), 'Total mismatch');
     }
 
+    /**
+     * @return array<string, array{0: list<string>, 1: array{subtotal: int, discount: int, delivery: int, total: int}}>
+     */
     public static function basketExamples(): array
     {
         return [

@@ -17,6 +17,9 @@ final class MoneyTest extends TestCase
         self::assertSame($expectedAmount, $left->add($right)->amount());
     }
 
+    /**
+     * @return array<string, array{0: Money, 1: Money, 2: int}>
+     */
     public static function additionExamples(): array
     {
         return [
@@ -31,6 +34,9 @@ final class MoneyTest extends TestCase
         self::assertSame($expectedAmount, $left->subtract($right)->amount());
     }
 
+    /**
+     * @return array<string, array{0: Money, 1: Money, 2: int}>
+     */
     public static function subtractionExamples(): array
     {
         return [
@@ -54,6 +60,9 @@ final class MoneyTest extends TestCase
         self::assertSame($expected, $money->multiplyRatio($numerator, $denominator)->amount());
     }
 
+    /**
+     * @return array<string, array{0: int, 1: int, 2: int, 3: int}>
+     */
     public static function ratioExamples(): array
     {
         return [
